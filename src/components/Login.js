@@ -1,12 +1,31 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { auth, googleProvider } from '../firebase';
+import { signInWithPopup } from "firebase/auth";
+import { useUser } from '../UserContext';
 
 const Login = () => {
+
+  const { user } = useUser();
+  const navigate = useNavigate();
+  const handleGoogleLogin = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      console.log('User info:', result.user);
+    } catch (error) {
+      console.error('Error during sign-in:', error);
+    }
+  };
+
+  if(user)
+    navigate("/home");
   return (
     <div style={styles.container}>
       <div style={styles.box}>
         <h1 style={styles.title}>Login</h1>
-        <button style={styles.gLoginButton}>Login with Gmail</button>
+        <button style={styles.gLoginButton} onClick={handleGoogleLogin}>
+          Login with Gmail
+        </button>
         <div style={styles.help}>
           <p style={styles.helpText}>Need help?</p>
           <Link to="/contact-us" style={styles.helpLink}>Contact Us</Link>

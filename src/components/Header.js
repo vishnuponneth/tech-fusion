@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import OurTeam from './OurTeam'; // Import the OurTeam component
 import './Header.css'; // Import CSS for additional styling
+import { useUser } from '../UserContext';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showTeam, setShowTeam] = useState(false);
+  const { user } = useUser();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -31,7 +33,7 @@ const Header = () => {
       </header>
       <div style={{ ...styles.menu, transform: menuOpen ? 'translateX(0)' : 'translateX(-100%)' }}>
         <ul style={styles.menuList}>
-          <li style={styles.menuItem}><Link to="/login" onClick={toggleMenu} style={styles.link}>Login</Link></li>
+          {!user && <li style={styles.menuItem}><Link to="/login" onClick={toggleMenu} style={styles.link}>Login</Link></li>}
           <li style={styles.menuItem}><Link to="/internships" onClick={toggleMenu} style={styles.link}>Internships</Link></li>
           <li style={styles.menuItem}><Link to="/academic-tutoring" onClick={toggleMenu} style={styles.link}>Academic Tutoring</Link></li>
           <li style={styles.menuItem}><Link to="/contact-us" onClick={toggleMenu} style={styles.link}>Contact Us</Link></li>
