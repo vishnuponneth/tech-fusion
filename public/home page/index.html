@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Fusion</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <header>
+        Tech Fusion
+        <p>Empowering B.Tech Students through Quality Tutoring</p>
+    </header>
+<!-- <div class="content"> -->
+    <div class="content">
+        <!-- Section 1 -->
+        <div class="section">
+            <img src="images/teacher-5635919_1920.png" alt="Image 1">
+            <div class="section-content">
+                <p>“Welcome to Tech Fusion” At Tech Fusion, we believe in merging knowledge with practical experience. Our mission is to empower aspiring engineers through high-quality online tutoring tailored to the needs of B.Tech students.</p>
+            </div>
+        </div>
+
+       <!-- Card Section -->
+<div>
+    <center>
+    <h2>Why Choose Tech Fusion?</h2></center>
+    <div class="container">
+        <div class="card">
+            <div class="icon">
+                <img src="images/btech classes.png" alt="Icon 1">
+            </div>
+            <h3>B.Tech Subject Classes:</h3>
+            <p>We provide comprehensive tutoring in B.Tech subjects, ensuring you build a strong foundation in core concepts while also delving into specialized areas.</p>
+        </div>
+        <div class="card">
+            <div class="icon">
+                <img src="images/core concept.png" alt="Icon 2">
+            </div>
+            <h3>Comprehensive Curriculum:</h3>
+            <p>Our carefully designed curriculum ensures you grasp essential engineering principles and stay updated with the latest advancements in technology.</p>
+        </div>
+        <div class="card">
+            <div class="icon">
+                <img src="images/alumni.png" alt="Icon 3">
+            </div>
+            <h3>Classes by CUSAT Alumnus:</h3>
+            <p>Learn from the best! Our instructors are accomplished alumni from Cochin University of Science and Technology (CUSAT).</p>
+        </div>
+        <div class="card">
+            <div class="icon">
+                <img src="images/resume.png" alt="Icon 4">
+            </div>
+            <h3>Build Your Resume:</h3>
+            <p>Stand out in a competitive job market! Our courses and internships enhance your knowledge and add significant value to your resume.</p>
+        </div>
+    </div>
+</div>
+
+        <!-- Section 2 -->
+        <div class="c">
+            <center><h1>Our Services</h1></center>
+            <div class="section2">
+                <img src="images/virtual-7071998_1920.png" alt="Image 2">
+                <div class="section-content">
+                    <p><h2>Engaging Video Lessons:</h2> Our dynamic video lessons are designed to keep you engaged and make learning enjoyable. With interactive content, quizzes, and discussions, studying with us is both effective and fun!</p>
+                </div>
+            </div>
+            <div class="section2">
+                <img src="images/webcam-7109621_1920.png" alt="Image 3">
+                <div class="section-content">
+                    <p><h2>1-on-1 Mentoring:</h2> Receive personalized attention through dedicated 1-on-1 mentoring sessions. Our experienced tutors will address your specific challenges and provide tailored guidance.</p>
+                </div>
+            </div>
+            <div class="section2">
+                <img src="images/anytime.png" alt="Image 4">
+                <div class="section-content">
+                    <p><h2>Flexible Scheduling:</h2> Learn at your own pace with classes that fit your busy lifestyle. Our flexible scheduling allows you to balance your studies with other commitments.</p>
+                </div>
+            </div>
+            <div class="section2">
+                <img src="images/certification-3242594_1920.png" alt="Image 5">
+                <div class="section-content">
+                    <p><h2>Certification:</h2> Upon completion of your courses and internships, receive a certification that showcases your expertise and commitment to your professional development.</p>
+                </div>
+            </div>
+            <div class="section2">
+                <center><img src="images/lets do it.png" alt="Image 6"></center>
+            </div>
+        </div>
+
+        <!-- Section 3 (Happy Students) -->
+        <div class="section3">
+            <img src="images/happy student.png" alt="Happy Students">
+            <div class="section-content">
+                <div class="happy">102368 <p>Happy Students</p></div>
+            </div>
+        </div>
+    </div>      <footer>
+        <h2>Join the Tech Fusion Community!</h2>
+        <p>Ready to take your engineering career to the next level? <br>
+            Enroll today and experience the perfect blend of theoretical knowledge and practical application.<br>
+        </p>
+        <h2>Get Started Now</h2>
+        <p>Stay connected with us on social media for updates, tips, and success stories from our students!<br>
+            <a href="https://www.instagram.com/tech.fusion.education/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a><br>
+            <a href="https://www.linkedin.com/in/tech-fusion-/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a><br>
+            <a href="https://wa.me/917012422309" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp: +91 7012422309</a><br>
+        
+        </p>
+    </footer>
+    <script>        
+    document.addEventListener('DOMContentLoaded', function() {
+        const happyStudents = document.querySelector('.happy');
+        
+        let endValue = 102368;
+        let count = endValue-100;
+        let increment = setInterval(function() {
+            if (count < endValue) {
+                count++;
+                happyStudents.innerHTML = `${count} <p>Happy Students</p>`;
+            } else {
+                clearInterval(increment);
+            }
+        }, 10); // Adjust the speed by changing the interval
+    });
+</script>
+</body>
+</html>
