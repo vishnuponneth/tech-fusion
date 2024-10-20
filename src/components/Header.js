@@ -7,7 +7,7 @@ import { useUser } from '../UserContext';
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showTeam, setShowTeam] = useState(false);
-  const { user } = useUser();
+  const { user, logout } = useUser();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -19,7 +19,6 @@ const Header = () => {
 
   return (
     <>
-      {showTeam && <OurTeam />}
       <header style={styles.header}>
         <div style={styles.strip}></div>
         <button style={styles.menuButton} onClick={toggleMenu}>
@@ -28,7 +27,7 @@ const Header = () => {
           <div style={styles.menuIcon}></div>
         </button>
         <button style={styles.teamButton} onClick={toggleTeam}>
-          Our Team
+          Tech Fusion
         </button>
       </header>
       <div style={{ ...styles.menu, transform: menuOpen ? 'translateX(0)' : 'translateX(-100%)' }}>
@@ -38,6 +37,7 @@ const Header = () => {
           <li style={styles.menuItem}><Link to="/academic-tutoring" onClick={toggleMenu} style={styles.link}>Academic Tutoring</Link></li>
           <li style={styles.menuItem}><Link to="/contact-us" onClick={toggleMenu} style={styles.link}>Contact Us</Link></li>
           <li style={styles.menuItem}><Link to="/about" onClick={toggleMenu} style={styles.link}>About</Link></li>
+          {user && <li style={styles.menuItem}><Link to="/home" onClick={logout} style={styles.link}>Logout</Link></li>}
         </ul>
       </div>
     </>

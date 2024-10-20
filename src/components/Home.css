@@ -1,0 +1,192 @@
+a {
+    color: #655; /* Change the color to your desired value */
+    text-decoration: none; /* Remove the underline */
+}
+
+a:hover {
+    color: #555; /* Hover effect for links */
+    text-decoration: underline; /* Optional hover underline */
+}
+div .section2 {
+    border: 5px solid #ccc; /* Add a light border to all divs */
+    padding: 10px; /* Optional: Add some padding inside the border */
+    border-radius: 8px; /* Optional: Add rounded corners */
+
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+    background-color: white;
+    overflow-x: hidden;
+}
+
+header {
+    margin: 0;
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    font-size: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+header p {
+    font-size: 16px;
+    color: #ccc;
+    margin-top: 5px;
+}
+
+.content {
+    margin: 2px;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px; /* Optional: rounded corners */
+    border: 5px;
+}
+.section2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: #e0f7fa; Choose any color from above options */
+    /* padding: 20px; Optional: add padding for spacing */
+    border-radius: 10px; /* Optional: rounded corners */
+    border: 5px;
+    border-color: red;
+}
+
+.section img, .section2 img {
+    max-width: 25%;
+    margin-right: 20px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.section h2, .section2 h2 {
+    font-size: 30px;
+    color: #333;
+    font-weight: bold;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+
+.section p, .section2 p {
+    font-size: 25px;
+    color: #000;
+    line-height: 1.6;
+}
+
+.section-content {
+    flex-grow: 1;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    width: 100%;
+    bottom: 0;
+    background-color: #26c08c;
+}
+
+/* Responsive Design */
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns for larger screens */
+    gap: 50px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .section, .section2 {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section img, .section2 img {
+        max-width: 100%; /* Ensures images take full width on mobile */
+        margin: 0 0 20px; /* Margin for spacing */
+    }
+
+    .section p, .section2 p {
+        font-size: 16px; /* Change to your desired size for mobile screens */
+    }
+
+    .container {
+        grid-template-columns: 1fr; /* One column for mobile screens */
+    }
+    
+}
+
+        /* Card Section */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+             background-color: #ccc; 
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.2s;
+            overflow: visible;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .icon {
+            position: absolute;
+            top: -30px;
+            left: 20px;
+            width: 80px;
+            height: 80px;
+            /* background-color: #f4f4f4; */
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+h3 {
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+p {
+    font-size: 16px;
+    color: #000;
+}
+
+/* Happy Students */
+.happy {
+    font-size: 4em;
+    font-weight: bold;
+}
+
+.happy p {
+    font-weight: bold;
+}
