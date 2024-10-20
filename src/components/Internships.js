@@ -1,19 +1,25 @@
 import React, { useState, useEffect } from 'react';
+import { getCoursesByType } from '../functions/firestore';
 import './Internship.css'; // Import CSS for additional styling
 
 const Internship = () => {
-  // const [currentIndex, setCurrentIndex] = useState(0);
+  const [courses, setCourses] = useState([]);
 
-  // const images = ['https://picsum.photos/id/237/400/300', 'https://picsum.photos/id/238/400/300', 'https://picsum.photos/id/239/400/300'];
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+       
+          const filteredCourses = await getCoursesByType("internship");
+          console.log(filteredCourses);
+          setCourses(filteredCourses);
+        
+      } catch (error) {
+        console.error('Error fetching courses:', error);
+      }
+    };
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCurrentIndex(prevIndex => (prevIndex + 1) % images.length);
-  //   }, 5000); // Change image every 5 seconds
-
-  //   return () => clearInterval(interval); // Cleanup interval on component unmount
-  // }, [images.length]);
-
+    fetchCourses();
+  }, []); // Re-fetch data when filter changes
   return (<>
     <h1>Internships</h1>
 
@@ -27,7 +33,7 @@ const Internship = () => {
     <div class="internship">
       <h2>Front-End Web Development Internship</h2>
       <p>Embark on a 4-week Front-End Web Development Internship tailored for first-year students. Learn essential skills in HTML, CSS, and JavaScript while creating responsive web applications. Weekly assignments and projects will build your portfolio and enhance your coding abilities. This internship is an excellent opportunity to kickstart your career in web development and design.</p>
-      <a href="pdf/Web Development_syllabus.pdf">Syllabus</a>
+      <a href="https://drive.google.com/file/d/1yAMhVylm_N2lVnqPBQRWDHV7enBB_GUZ/view?usp=sharing">Syllabus</a>
     </div>
 
     <div class="internship">
