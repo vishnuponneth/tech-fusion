@@ -1,12 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { getCoursesByType } from '../functions/firestore';
 import "./AcademicTutoring.css";
 
 const AcademicTutoring = () => {
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+       
+          const filteredCourses = await getCoursesByType("subject");
+          console.log(filteredCourses);
+          setCourses(filteredCourses);
+        
+      } catch (error) {
+        console.error('Error fetching courses:', error);
+      }
+    };
+
+    fetchCourses();
+  }, []); // Re-fetch data when filter changes
+
   return (
     <>
      <h1>Subject Descriptions</h1>
-    
-    <div class="subject">
+    {
+      courses.map(course=>(
+        <div key={course.id} className="subject">
+        <h2>{course.title}</h2>
+        <p><span className="scheme">{course.scheme}:</span> {course.description}</p>
+    </div>
+      ))
+    }
+    {/* <div class="subject">
         <h2>Complex Analysis and Partial Differential Equations</h2>
         <p><span class="scheme">(S3:CS,EC,IT,EEE; S4:CE,SFE,ME) 2023 SCHEME:</span> This course covers analytic functions, complex analysis, and partial differential equations. Topics include Cauchy’s theorems, Taylor expansions, singularities, and applications in signal processing, quantum mechanics, machine learning, and materials science. Advanced differential equations such as wave and heat equations are explored, emphasizing modern applications in various engineering fields. 30+ Questions including previous year questions are discussed in each module.</p>
     </div>
@@ -30,7 +56,7 @@ const AcademicTutoring = () => {
         <h2>Computer Programming Laboratory</h2>
         <p><span class="scheme">(S1, S2) 2023 SCHEME:</span> Enhance your C programming skills through hands-on laboratory exercises. Engage with application packages, implement decision-making and looping constructs, and work with arrays, strings, and functions. Explore recursion, structures, and pointers to solve practical problems. This lab course complements theoretical knowledge and prepares you for real-world programming challenges.</p>
     </div>
-    
+     */}
     </>
   );
 };

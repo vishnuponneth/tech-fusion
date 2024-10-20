@@ -23,6 +23,17 @@ const Internship = () => {
   return (<>
     <h1>Internships</h1>
 
+    {
+      courses.map(course=>(
+        <div key={course.id} class="internship">
+        <h2>{course.title}</h2>
+        <p>{course.description}</p>
+        <a href={course.syllabus}>Syllabus</a>
+  
+      </div>
+      ))
+    }
+{/* 
     <div class="internship">
       <h2>Digital Design Internship</h2>
       <p>Join our 4-week Digital Design Internship, where you'll explore fundamental concepts in digital electronics. Engage in hands-on projects, culminating in the implementation of an ALU using logic gates in CircuitVerse. Weekly assignments will enhance your understanding and practical skills. This internship is perfect for first-year students eager to delve into digital design and circuit development.</p>
@@ -40,7 +51,7 @@ const Internship = () => {
       <h2>Verilog Internship</h2>
       <p>Our 4-week Verilog Internship focuses on teaching Verilog to electronics and electrical engineering students. You'll gain a solid understanding of hardware description languages and their applications in digital design. Each week includes structured lessons and practical assignments to reinforce learning. This internship is designed for second-year students ready to advance their knowledge in digital systems.</p>
       <a href="pdf/Verilog Internship_syllabus.pdf">Syllabus</a>
-    </div>
+    </div> */}
   </>
   );
 };

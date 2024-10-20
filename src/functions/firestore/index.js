@@ -1,28 +1,29 @@
 import { db } from '../../firebase'; // Firestore instance
+import { collection, getDocs, query, where, doc } from 'firebase/firestore';
 
 // Function to get all courses
 export const getCourses = async () => {
-  try {
-    const coursesSnapshot = await db.collection('courses').get();
-    const courses = coursesSnapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
-    return courses;
-  } catch (error) {
-    console.error('Error getting courses:', error);
-    throw error;
-  }
-};
+    try {
+      const coursesCollection = collection(db, 'courses');
+      const coursesSnapshot = await getDocs(coursesCollection);
+      const courses = coursesSnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      return courses;
+    } catch (error) {
+      console.error('Error getting courses:', error);
+      throw error;
+    }
+  };
+  
 
 // Function to get videos from a specific course
 export const getVideosByCourseId = async (courseId) => {
     try {
-      const videosSnapshot = await db
-        .collection('courses')
-        .doc(courseId)
-        .collection('videos')
-        .get();
+      const courseDoc = doc(db, 'courses', courseId);
+      const videosCollection = collection(courseDoc, 'videos');
+      const videosSnapshot = await getDocs(videosCollection);
   
       const videos = videosSnapshot.docs.map(doc => ({
         id: doc.id,
@@ -36,12 +37,11 @@ export const getVideosByCourseId = async (courseId) => {
   };
 
   // Function to get courses by type ("internship" or "subject")
-export const getCoursesByType = async (type) => {
+  export const getCoursesByType = async (type) => {
     try {
-      const coursesSnapshot = await db
-        .collection('courses')
-        .where('type', '==', type)
-        .get();
+      const coursesCollection = collection(db, 'courses');
+      const coursesQuery = query(coursesCollection, where('type', '==', type));
+      const coursesSnapshot = await getDocs(coursesQuery);
   
       const courses = coursesSnapshot.docs.map(doc => ({
         id: doc.id,
@@ -53,5 +53,3 @@ export const getCoursesByType = async (type) => {
       throw error;
     }
   };
-  
-  
