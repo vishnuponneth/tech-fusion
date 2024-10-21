@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { getCoursesByType } from '../functions/firestore';
 import './Internship.css'; // Import CSS for additional styling
+import { useUser } from '../UserContext';
+import { createSearchParams, useNavigate } from 'react-router-dom';
 
 const Internship = () => {
   const [courses, setCourses] = useState([]);
-
+  const { user, logout } = useUser();
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-       
-          const filteredCourses = await getCoursesByType("internship");
-          console.log(filteredCourses);
-          setCourses(filteredCourses);
-        
+
+        const filteredCourses = await getCoursesByType("internship");
+        console.log(filteredCourses);
+        setCourses(filteredCourses);
+
       } catch (error) {
         console.error('Error fetching courses:', error);
       }
@@ -24,16 +27,24 @@ const Internship = () => {
     <h1>Internships</h1>
 
     {
-      courses.map(course=>(
+      courses.map(course => (
         <div key={course.id} class="internship">
-        <h2>{course.title}</h2>
-        <p>{course.description}</p>
-        <a href={course.syllabus}>Syllabus</a>
-  
-      </div>
+          <h2>{course.title}</h2>
+          <p>{course.description}</p>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <a href={course.syllabus}>Syllabus</a>
+            {user && <button onClick={() => navigate({
+              pathname: "/videos",
+              search: createSearchParams({
+                id: course.id
+              }).toString()
+            })}>View course</button>}
+          </div>
+        </div>
+
       ))
     }
-{/* 
+    {/* 
     <div class="internship">
       <h2>Digital Design Internship</h2>
       <p>Join our 4-week Digital Design Internship, where you'll explore fundamental concepts in digital electronics. Engage in hands-on projects, culminating in the implementation of an ALU using logic gates in CircuitVerse. Weekly assignments will enhance your understanding and practical skills. This internship is perfect for first-year students eager to delve into digital design and circuit development.</p>

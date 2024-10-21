@@ -11,6 +11,7 @@ import OurTeam from './components/OurTeam';
 import { auth, googleProvider } from './firebase';  
 import { Home } from './components/Home';
 import { UserProvider } from './UserContext';
+import Video from './components/Video';
 
 const App = () => {
   
@@ -21,6 +22,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/videos" element={<Video />} />
         <Route path="/home" element={<Home />} />
         <Route path="/internships" element={<Internships />} />
         <Route path="/academic-tutoring" element={<AcademicTutoring />} />
