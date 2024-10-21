@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { getCoursesByType } from '../functions/firestore';
 import "./AcademicTutoring.css";
+import { useUser } from '../UserContext';
+import { createSearchParams, useNavigate } from 'react-router-dom';
 
 const AcademicTutoring = () => {
   const [courses, setCourses] = useState([]);
+  const { user, logout } = useUser();
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     const fetchCourses = async () => {
@@ -29,6 +34,15 @@ const AcademicTutoring = () => {
         <div key={course.id} className="subject">
         <h2>{course.title}</h2>
         <p><span className="scheme">{course.scheme}:</span> {course.description}</p>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div></div>
+            {user && <button onClick={() => navigate({
+              pathname: "/videos",
+              search: createSearchParams({
+                id: course.id
+              }).toString()
+            })}>View course</button>}
+          </div>
     </div>
       ))
     }
