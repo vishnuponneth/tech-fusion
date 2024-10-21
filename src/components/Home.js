@@ -115,7 +115,7 @@ export function Home() {
                 <h2>Get Started Now</h2>
                 <p>Stay connected with us on social media for updates, tips, and success stories from our students!<br />
                     <a href="https://www.instagram.com/tech.fusion.education/" target="_blank"><i className="fab fa-instagram"></i> Instagram</a><br />
-                    <a href="https://www.linkedin.com/in/tech-fusion-/" target="_blank"><i className="fab fa-linkedin"></i> LinkedIn</a><br />
+                    <a href="https://www.linkedin.com/company/tech-fusion-ml/" target="_blank"><i className="fab fa-linkedin"></i> LinkedIn</a><br />
                     <a href="https://wa.me/917012422309" target="_blank"><i className="fab fa-whatsapp"></i> WhatsApp: +91 7012422309</a><br />
                 </p>
             </footer>
