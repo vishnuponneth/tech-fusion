@@ -101,7 +101,7 @@ export function Home() {
                 <div className="section" style={{ paddingLeft: "15%" }}>
                     <img src={happyStudentImage} alt="Happy Students" />
                     <div className="section-content">
-                        <div><b style={{ fontSize: "70px" }}>102368 </b><b style={{ fontSize: "70px" }}>Happy Students</b></div>
+                        <div><b style={{ fontSize: "70px" }}>10+ </b><b style={{ fontSize: "70px" }}>Happy Students</b></div>
                     </div>
                 </div>
             </div>
