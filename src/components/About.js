@@ -1,6 +1,6 @@
 import React from 'react';
 import "./About.css";
-
+const currentYear = new Date().getFullYear();
 const About = () => {
 
   return (
@@ -69,7 +69,7 @@ const About = () => {
     </div>
 
     <div className="about-us-footer">
-      <p>© 2023 Tech Fusion. All rights reserved.</p>
+      <p>© {currentYear} Tech Fusion. All rights reserved.</p>
     </div>
   </div>
 
