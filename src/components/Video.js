@@ -86,7 +86,7 @@ export default function Video() {
                         <Typography variant="h5">{contentData.title}</Typography>
                         <Typography variant="subtitle1" gutterBottom>{contentData.description}</Typography>
                         <div style={{ marginTop: "16px" }}>
-                            <iframe
+                            {/* <iframe
                                 width="100%"
                                 height="400"
                                 src={`https://www.youtube.com/embed/${new URL(contentData.videoUrl).pathname.split("/").pop()}`}
@@ -94,7 +94,8 @@ export default function Video() {
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
-                            />
+                            /> */}
+                            <a href={contentData.videoUrl} target="_blank">Go to video</a>
                         </div>
                     </div>
                 )}
