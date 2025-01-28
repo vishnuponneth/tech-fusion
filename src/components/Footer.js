@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer style={styles.footer}>
       <p style={styles.text}>
-        &copy; {currentYear} Tech Fusion
+        &copy; {currentYear} Tech Fusion by <a href="https://www.petaera.com">Petaera Technologies LLP</a>
       </p>
     </footer>
   );
