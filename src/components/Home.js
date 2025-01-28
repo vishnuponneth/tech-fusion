@@ -117,6 +117,7 @@ export function Home() {
                     <a href="https://www.instagram.com/tech.fusion.education/" target="_blank"><i className="fab fa-instagram"></i> Instagram</a><br />
                     <a href="https://www.linkedin.com/company/tech-fusion-ml/" target="_blank"><i className="fab fa-linkedin"></i> LinkedIn</a><br />
                     <a href="https://wa.me/917012422309" target="_blank"><i className="fab fa-whatsapp"></i> WhatsApp: +91 7012422309</a><br />
+                    <br></br>
                 </p>
             </footer>
         </>
