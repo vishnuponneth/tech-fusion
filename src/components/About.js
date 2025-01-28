@@ -68,9 +68,9 @@ const About = () => {
       </div>
     </div>
 
-    <div className="about-us-footer">
+    {/* <div className="about-us-footer">
       <p>© {currentYear} Tech Fusion by Petaera Technologies LLP All rights reserved.</p>
-    </div>
+    </div> */}
   </div>
 
   );
