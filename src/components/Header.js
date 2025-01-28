@@ -27,7 +27,7 @@ const Header = () => {
           <div style={styles.menuIcon}></div>
         </button>
         <button style={styles.teamButton} onClick={toggleTeam}>
-          Tech Fusion
+          Tech Fusion by <a href="https://www.petaera.com">Petaera Technologies</a> 
         </button>
       </header>
       <div style={{ ...styles.menu, transform: menuOpen ? 'translateX(0)' : 'translateX(-100%)' }}>
